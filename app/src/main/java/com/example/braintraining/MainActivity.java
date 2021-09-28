@@ -3,6 +3,7 @@ package com.example.braintraining;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -47,12 +48,13 @@ public class MainActivity extends AppCompatActivity {
         tvResult = findViewById(R.id.tvResult);
         actionBar = getSupportActionBar();
         numbers();
+        tvResult.setText(String.valueOf(true_answer));
     }
 
     public void onClickTrue(View view) {
         if (is_true_answer) {
-            String s = "" + ++true_answer;
-            tvResult.setText(s);
+            ++true_answer;
+            tvResult.setText(String.valueOf(true_answer));
             numbers();
             current_time = System.currentTimeMillis();
             time_result = (float) (current_time - start_time) / 1000;
@@ -69,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickFalse(View view) {
         if (!is_true_answer) {
-            String s = "" + ++true_answer;
-            tvResult.setText(s);
+            ++true_answer;
+            tvResult.setText(String.valueOf(true_answer));
             numbers();
             current_time = System.currentTimeMillis();
             time_result = (float) (current_time - start_time) / 1000;
@@ -103,5 +105,9 @@ public class MainActivity extends AppCompatActivity {
         }
         tvMain.setText(text);
 
+        if (true_answer>=max_true_answer) {
+            Intent i = new Intent(this,FinalActivity.class);
+            startActivity(i);
+        }
     }
 }
