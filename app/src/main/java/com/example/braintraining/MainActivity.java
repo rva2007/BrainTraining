@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFalse(View view) {
-        numbers();
+//        numbers();
     }
 
     private void numbers() {
