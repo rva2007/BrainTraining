@@ -24,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
     private int min = 2;
     private int max_fals = 40;
     private int min_fals = 10;
+    private long start_time = 0;
+    private long current_time = 0;
+    private float time_result = 0;
+    private int true_answer = 0;
+    private int max_true_answer = 5;
+    private boolean is_true_answer = false;
 
 
     @Override
@@ -35,18 +41,49 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
+        start_time = System.currentTimeMillis();
         pref = getSharedPreferences("Test", MODE_PRIVATE);
         tvMain = findViewById(R.id.tvMain);
         tvResult = findViewById(R.id.tvResult);
         actionBar = getSupportActionBar();
-    }
-
-    public void onClickTrue(View view) {
         numbers();
     }
 
+    public void onClickTrue(View view) {
+        if (is_true_answer) {
+            String s = "" + ++true_answer;
+            tvResult.setText(s);
+            numbers();
+            current_time = System.currentTimeMillis();
+            time_result = (float) (current_time - start_time) / 1000;
+            String time = "Time: " + time_result;
+            actionBar.setTitle(time);
+        } else {
+            numbers();
+            current_time = System.currentTimeMillis();
+            time_result = (float) (current_time - start_time) / 1000;
+            String time = "Time: " + time_result;
+            actionBar.setTitle(time);
+        }
+    }
+
     public void onClickFalse(View view) {
-//        numbers();
+        if (!is_true_answer) {
+            String s = "" + ++true_answer;
+            tvResult.setText(s);
+            numbers();
+            current_time = System.currentTimeMillis();
+            time_result = (float) (current_time - start_time) / 1000;
+            String time = "Time: " + time_result;
+            actionBar.setTitle(time);
+        } else {
+            numbers();
+            current_time = System.currentTimeMillis();
+            time_result = (float) (current_time - start_time) / 1000;
+            String time = "Time: " + time_result;
+            actionBar.setTitle(time);
+        }
+
     }
 
     private void numbers() {
@@ -56,12 +93,13 @@ public class MainActivity extends AppCompatActivity {
         number_false = (int) (Math.random() * (max_fals - min_fals));
         number_result = number_1 + number_2;
 
-        tvResult.setText(String.valueOf(number_1));
         String text;
         if (number_index == 1) {
-            text = number_1 + " + " + number_2 + " = " + number_result; 
-        }else {
+            text = number_1 + " + " + number_2 + " = " + number_result;
+            is_true_answer = true;
+        } else {
             text = number_1 + " + " + number_2 + " = " + number_false;
+            is_true_answer = false;
         }
         tvMain.setText(text);
 
