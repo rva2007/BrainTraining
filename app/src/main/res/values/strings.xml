@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">BrainTraining</string>
+    <string name="btn_false">Неверно</string>
+    <string name="btn_true">Верно</string>
+</resources>
