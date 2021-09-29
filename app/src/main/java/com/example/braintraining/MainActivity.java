@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private long current_time = 0;
     private float time_result = 0;
     private int true_answer = 0;
-    int max_true_answer = 3;
+    int max_true_answer = 2;
     private boolean is_true_answer = false;
 
 

@@ -14,7 +14,7 @@ public class FinalActivity extends AppCompatActivity {
     private final String save_key = "save_key";
     private TextView tvFinalResult, tvBestResult;
     private float final_result;
-    private float save_result;
+    private float save_result = 100f;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,11 +33,12 @@ public class FinalActivity extends AppCompatActivity {
         tvBestResult.setText(String.valueOf(save_result));
         tvFinalResult.setText(String.valueOf(final_result));
 
-        if (final_result < save_result) {
+        if (final_result < save_result || save_result == 0) {
             tvFinalResult.setText("Новый рекорд: " + final_result + " сек.");
             tvBestResult.setText("Лучший результат: " + final_result + " сек.");
             saveData();
         } else {
+
             tvFinalResult.setText("Ваш результат: " + final_result + " сек.");
             tvBestResult.setText("Лучший результат: " + save_result + " сек.");
         }
