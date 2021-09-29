@@ -11,10 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FinalActivity extends AppCompatActivity {
     private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
     private final String save_key = "save_key";
     private TextView tvFinalResult, tvBestResult;
     private float final_result;
-    private float save_result = 100f;
+    private float save_result;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,14 +39,13 @@ public class FinalActivity extends AppCompatActivity {
             tvBestResult.setText("Лучший результат: " + final_result + " сек.");
             saveData();
         } else {
-
             tvFinalResult.setText("Ваш результат: " + final_result + " сек.");
             tvBestResult.setText("Лучший результат: " + save_result + " сек.");
         }
     }
 
     public void saveData() {
-        SharedPreferences.Editor editor = pref.edit();
+        editor = pref.edit();
         editor.putFloat(save_key, final_result);
         editor.apply();
     }
@@ -57,5 +57,11 @@ public class FinalActivity extends AppCompatActivity {
     public void onClickBack(View view) {
         Intent i = new Intent(this, StartActivity.class);
         startActivity(i);
+    }
+
+    public void onClickReset(View view) {
+        this.getSharedPreferences("Game_result", MODE_PRIVATE).edit().clear().commit();
+        tvFinalResult.setText(String.valueOf(0));
+        tvBestResult.setText(String.valueOf(0));
     }
 }
