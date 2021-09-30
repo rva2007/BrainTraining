@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="onClickNext"
+    android:orientation="vertical"
+    tools:context=".AnimalsActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <ImageView
+                android:id="@+id/imV11"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick11"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/begemot2" />
+
+            <ImageView
+                android:id="@+id/imV12"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick12"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/burunduk" />
+
+            <ImageView
+                android:id="@+id/imV13"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:onClick="onClick13"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/djatel" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="1dp">
+
+            <ImageView
+                android:id="@+id/imV21"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick21"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/dolphin" />
+
+            <ImageView
+                android:id="@+id/imV22"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick22"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/enot" />
+
+            <ImageView
+                android:id="@+id/imV23"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:onClick="onClick23"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/ezik" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <ImageView
+                android:id="@+id/imV31"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick31"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/golub" />
+
+            <ImageView
+                android:id="@+id/imV32"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick32"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/gusy" />
+
+            <ImageView
+                android:id="@+id/imV33"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:onClick="onClick33"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/koza" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <ImageView
+                android:id="@+id/imV41"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick41"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/krolik" />
+
+            <ImageView
+                android:id="@+id/imV42"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick42"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/kukushka" />
+
+            <ImageView
+                android:id="@+id/imV43"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:onClick="onClick43"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/kuriza" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <ImageView
+                android:id="@+id/imV51"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick51"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/kuznechik" />
+
+            <ImageView
+                android:id="@+id/imV52"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginRight="1dp"
+                android:onClick="onClick52"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/loshad" />
+
+            <ImageView
+                android:id="@+id/imV53"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:onClick="onClick53"
+                tools:ignore="SpeakableTextPresentCheck"
+                tools:srcCompat="@drawable/medved" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickNext"
+        android:text="продолжить" />
+
+</LinearLayout>

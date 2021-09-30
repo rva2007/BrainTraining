@@ -25,6 +25,9 @@
         <activity
             android:name=".FinalActivity"
             android:noHistory="true" />
+        <activity
+            android:name=".AnimalsActivity"
+            android:noHistory="true" />
     </application>
 
 </manifest>
