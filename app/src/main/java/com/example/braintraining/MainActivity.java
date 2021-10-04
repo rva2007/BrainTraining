@@ -4,20 +4,24 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView imAnimal;
-    private TextView tvMain, tvResult;
+    private TextView tvMain;
     private ActionBar actionBar;
+    private ProgressBar progressBar;
     private long start_time = 0;
     private long current_time = 0;
     private float time_result = 0;
     private int true_answer = 0;
-    int max_true_answer = 2;
+    int max_true_answer = 5;
     private boolean is_true_answer = false;
 
 
@@ -33,16 +37,17 @@ public class MainActivity extends AppCompatActivity {
         start_time = System.currentTimeMillis();
         imAnimal = findViewById(R.id.imAnimal);
         tvMain = findViewById(R.id.tvMain);
-        tvResult = findViewById(R.id.tvResult);
         actionBar = getSupportActionBar();
+        progressBar = findViewById(R.id.progressBar);
+        progressBar.setMax(max_true_answer);
         numbers();
-        tvResult.setText(String.valueOf(true_answer));
+        progressBar.setProgress(true_answer);
     }
 
     public void onClickTrue(View view) {
         if (is_true_answer) {
             ++true_answer;
-            tvResult.setText(String.valueOf(true_answer));
+            progressBar.setProgress(true_answer);
             numbers();
             current_time = System.currentTimeMillis();
             time_result = (float) (current_time - start_time) / 1000;
@@ -60,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickFalse(View view) {
         if (!is_true_answer) {
             ++true_answer;
-            tvResult.setText(String.valueOf(true_answer));
+            progressBar.setProgress(true_answer);
             numbers();
             current_time = System.currentTimeMillis();
             time_result = (float) (current_time - start_time) / 1000;
@@ -88,11 +93,11 @@ public class MainActivity extends AppCompatActivity {
         int number_result = number_1 + number_2;
         String text;
         if (number_index != 3) {
-            imAnimal.setImageResource(R.drawable.loshad1);
+//            imAnimal.setImageResource(R.drawable.loshad1);
             text = number_1 + " + " + number_2 + " = " + number_result;
             is_true_answer = true;
         } else {
-            imAnimal.setImageResource(R.drawable.medved1);
+//            imAnimal.setImageResource(R.drawable.medved1);
             text = number_1 + " + " + number_2 + " = " + number_false;
             is_true_answer = false;
         }

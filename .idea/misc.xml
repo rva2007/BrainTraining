@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/AndroidStudioProgects/BrainTraining/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Android/AndroidStudioProgects/BrainTraining/app/src/main/res/drawable/progress_drawable_blue.xml" value="0.2703125" />
         <entry key="..\:/Android/AndroidStudioProgects/BrainTraining/app/src/main/res/layout/activity_animals.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/AndroidStudioProgects/BrainTraining/app/src/main/res/layout/activity_final.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/AndroidStudioProgects/BrainTraining/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
